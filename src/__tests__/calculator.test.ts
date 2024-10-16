@@ -16,4 +16,9 @@ describe('Calculator', () => {
         expect(calculator.add('1,2,3')).toBe(6);
         expect(calculator.add('1,2,3,4,5')).toBe(15);
     });
+
+    it('should support different delimiters', () => {
+        expect(calculator.add('//;\n1;2')).toBe(3);
+        expect(calculator.add('//#\n2#3#4')).toBe(9);
+    });
 })
